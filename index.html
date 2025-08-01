@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuiStrategy - Sui's Treasury Protocol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+                         <nav class="nav">
+                                 <a href="#" class="nav-logo">
+                    <img src="assets/logo.svg" alt="SuiStrategy Logo" class="logo-icon">
+                    <span class="logo-text">SuiStrategy</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    Menu <img src="assets/arrow-right.svg" class="arrow-icon" style="transform: rotate(90deg);">
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#protocol-tokens" class="nav-link">Tokens</a>
+                    <a href="#competitive" class="nav-link">Competitive Edge</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="app/auth/login/" class="btn btn-primary">Enter App</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <h1 class="hero-title">SuiStrategy: Autonomous Treasury Protocol</h1>
+            <p class="hero-description">
+                An autonomous, composable treasury protocol on Sui designed to accumulate SUI through structured debt and token-based strategies. Built natively on Sui with cross-chain exposure via 1inch Fusion+ and advanced financial primitives through the 1inch Limit Order Protocol. Inspired by ETH Strategy Protocol.
+            </p>
+            <div class="hero-buttons">
+                <a href="app/auth/login/" class="btn btn-primary">Enter App</a>
+                <a href="#" class="btn btn-secondary">Read Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01/04</div>
+                        <h3 class="card-title">Long Bonds (Convertible Debt)</h3>
+                        <p class="card-description">
+                            Users deposit stablecoins (USDC) to receive CDT (Convertible Debt Token) 
+                            + NFT Options. Protocol uses deposits to market-buy SUI for treasury 
+                            accumulation. 0% interest debt with value embedded in conversion rights.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02/04</div>
+                        <h3 class="card-title">Short Bonds (Debt Conversion)</h3>
+                        <p class="card-description">
+                            Users deposit CDT + NFT Option to convert debt into SSTR before 
+                            expiry, or redeem CDT after expiry for stablecoins. This reduces 
+                            protocol liabilities and recycles debt into equity.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03/04</div>
+                        <h3 class="card-title">Cross-Chain Integration</h3>
+                        <p class="card-description">
+                            Seamless cross-chain execution via 1inch Fusion+ for 
+                            automated deposits and withdrawals (SUI ↔ ETH/USDC). 
+                            Efficient cross-chain liquidity without the complexity 
+                            of traditional bridging solutions.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">04/04</div>
+                        <h3 class="card-title">Treasury Lending & Automation</h3>
+                        <p class="card-description">
+                            Treasury SUI is lent through a custom Sui Lending Pool where 
+                            only SSTR can be used as collateral. 1inch Limit Order Protocol 
+                            enables TWAP, options-style orders, and automated strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="user-roles">
+            <div class="container">
+                <h2 class="section-title">User Roles</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">SSTR Holders</h3>
+                        <p class="feature-description">
+                            Represent equity holders with leveraged exposure to SUI. 
+                            Treasury-backed token that trades at a premium to NAV due 
+                            to embedded conversion value, offering amplified gains 
+                            without forced liquidation risk.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Bond Purchasers</h3>
+                        <p class="feature-description">
+                            Debt holders that fund the treasury and receive the right 
+                            to convert debt into SSTR. Deposit stablecoins to receive 
+                            CDT + Option NFTs, with conversion rights before expiry 
+                            or principal redemption after expiry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="protocol-tokens" id="protocol-tokens">
+            <div class="container">
+                <h2 class="section-title">Protocol Tokens</h2>
+                <div class="cards-grid">
+                    <div class="card product-card">
+                        <div class="card-number product-token">
+                            <img src="assets/logo.svg" alt="SSTR" class="product-token-logo">
+                            <span>SSTR</span>
+                        </div>
+                        <h3 class="card-title product-title">Treasury Token</h3>
+                        <div class="product-highlight">Asset-backed, value-accelerating token</div>
+                        <p class="card-description">
+                            Leveraged exposure to SUI with managed downside risk and 
+                            no forced liquidation. Trades at premium to treasury NAV 
+                            due to implied premium embedded in convertible notes.
+                        </p>
+                    </div>
+                    <div class="card product-card">
+                        <div class="card-number product-token">
+                            <img src="assets/logo.svg" alt="CDT" class="product-token-logo">
+                            <span>CDT</span>
+                        </div>
+                        <h3 class="card-title product-title">Convertible Debt</h3>
+                        <div class="product-highlight">0% interest debt, convertible to SSTR</div>
+                        <p class="card-description">
+                            Fungible Sui-native token representing convertible debt. 
+                            Created when users deposit stablecoins. Can be converted 
+                            to SSTR (with NFT Option) or redeemed for stablecoins after expiry.
+                        </p>
+                    </div>
+                    <div class="card product-card">
+                        <div class="card-number product-token">
+                            <img src="assets/logo.svg" alt="NFT" class="product-token-logo">
+                            <span>NFT</span>
+                        </div>
+                        <h3 class="card-title product-title">Option NFTs</h3>
+                        <div class="product-highlight">Holds convertible options</div>
+                        <p class="card-description">
+                            Non-fungible rights to convert CDT into SSTR before expiry. 
+                            Created alongside CDT when users deposit stablecoins. 
+                            Must be combined with CDT for conversion to SSTR.
+                        </p>
+                    </div>
+                    <div class="card product-card">
+                        <div class="card-number product-token">
+                            <img src="assets/logo.svg" alt="1INCH" class="product-token-logo">
+                            <span>1INCH</span>
+                        </div>
+                        <h3 class="card-title product-title">Limit Order Strategy</h3>
+                        <div class="product-highlight">Supports TWAP/Options</div>
+                        <p class="card-description">
+                            Fusion+ integration for automated cross-chain deposits 
+                            and withdrawals. Limit Order Protocol enables TWAP 
+                            execution and sophisticated trading strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Protocol Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Treasury Accumulation</h3>
+                        <p class="feature-description">
+                            Accumulates large on-chain treasury primarily denominated 
+                            in SUI through structured debt instruments. 0% interest 
+                            bonds with embedded conversion value create sustainable 
+                            treasury growth and SSTR value accrual.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Cross-Chain Liquidity</h3>
+                        <p class="feature-description">
+                            Seamless liquidity access via 1inch Fusion+ integration. 
+                            Lower fees on Sui combined with efficient cross-chain 
+                            execution eliminate traditional bridging friction and 
+                            enable flexible entry/exit strategies.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Modular & Composable</h3>
+                        <p class="feature-description">
+                            Highly modular design with composable tools for 
+                            structured income, NFT-based options, and growth tokens. 
+                            Built for next-gen DeFi with scalable architecture and 
+                            flexible integration capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="competitive" id="competitive">
+            <div class="container">
+                <h2 class="section-title">Competitive Edge</h2>
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>ETH Strategy Protocol</th>
+                                <th>SuiStrategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Network</td>
+                                <td>Ethereum (EVM)</td>
+                                <td class="highlight">Sui (Move-based, faster & cheaper)</td>
+                            </tr>
+                            <tr>
+                                <td>Token</td>
+                                <td>STRAT (ERC20)</td>
+                                <td class="highlight">SSTR (Sui-native coin)</td>
+                            </tr>
+                            <tr>
+                                <td>Swap Support</td>
+                                <td class="negative">❌ None</td>
+                                <td class="positive">✅ 1inch Fusion+ (SUI ↔ ETH/USDC swaps)</td>
+                            </tr>
+                            <tr>
+                                <td>Automation</td>
+                                <td class="negative">❌ Manual</td>
+                                <td class="positive">✅ 1inch Limit Orders (TWAP, option-like)</td>
+                            </tr>
+                            <tr>
+                                <td>Lending Pool</td>
+                                <td>STRAT-backed lending via Morpho ETH pool</td>
+                                <td class="positive">✅ SSTR-backed SUI lending pool built natively on Sui</td>
+                            </tr>
+                            <tr>
+                                <td>UX/UI</td>
+                                <td>Basic</td>
+                                <td class="positive">✅ Strategy dashboard, auto-execution UI</td>
+                            </tr>
+                            <tr>
+                                <td>Revenue Model</td>
+                                <td>Bond premium only</td>
+                                <td class="positive">✅ Bond premium + protocol fees from swaps</td>
+                            </tr>
+                            <tr>
+                                <td>Modularity</td>
+                                <td>Rigid structure (dependent on Morpho)</td>
+                                <td class="positive">✅ Modular strategy setup, 1inch API support, strategy automation vaults</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-suistrategy">
+            <div class="container">
+                <h2 class="section-title">Why SuiStrategy?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-number">+400%</div>
+                        <h3 class="feature-title">Market Opportunity</h3>
+                        <p class="feature-description">
+                            Sui TVL rapid growth provides early-mover advantage. 
+                            $7-10B structured product market with strong demand for 
+                            yield-enhancing products and institutional treasury solutions.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">$10B+</div>
+                        <h3 class="feature-title">Institutional Ready</h3>
+                        <p class="feature-description">
+                            Growing institutional interest in Sui—highlighted by activity 
+                            from Fireblocks, Grayscale, and ongoing development of 
+                            stablecoins and potential ETF products. Maturing Layer 1 ecosystem.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">10-15%</div>
+                        <h3 class="feature-title">Capital Migration</h3>
+                        <p class="feature-description">
+                            ETH/USDC liquidity migration potential. 
+                            Higher yields and lower fees on Sui attract capital 
+                            from congested networks seeking better returns.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="roadmap">
+            <div class="container">
+                <h2 class="section-title">Roadmap</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">Phase 1</div>
+                        <h3 class="card-title">MVP & Core Mechanics</h3>
+                        <p class="card-description">
+                            Long Bonds (SUI → CDT), CDT Options, Short Bond logic, 
+                            1inch Fusion+ integration for cross-chain swaps, and 
+                            1inch Limit Order Protocol for TWAP execution.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">Phase 2</div>
+                        <h3 class="card-title">Expanded Functionality</h3>
+                        <p class="card-description">
+                            Allow fractional SUI deposits, launch dashboard for NAV 
+                            & SSTR metrics, enhance Fusion+ flows for two-way swaps 
+                            (entry & exit strategies).
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">Phase 3</div>
+                        <h3 class="card-title">Full Protocol Logic</h3>
+                        <p class="card-description">
+                            Implement Short Bond debt buyback & burn mechanism, 
+                            add SSTR redeem function for treasury-backed equity, 
+                            activate dynamic SSTR rebase linked to treasury growth.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">Phase 4</div>
+                        <h3 class="card-title">Advanced Automation & DAO</h3>
+                        <p class="card-description">
+                            Expand 1inch Limit Order strategies (options-like execution, 
+                            range orders), launch automated strategy vaults for SSTR holders, 
+                            introduce DAO governance & on-chain strategy management.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">What is SuiStrategy?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            An autonomous, composable treasury protocol on Sui designed to accumulate SUI through structured debt and token-based strategies. Built natively on Sui with cross-chain exposure via 1inch Fusion+ and advanced primitives through 1inch Limit Order Protocol. Inspired by ETH Strategy Protocol.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">How do bonds work?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            Long Bonds: Deposit stablecoins to receive CDT + Option NFTs. Protocol uses deposits to buy SUI for treasury. Short Bonds: Convert CDT + NFT Option to SSTR before expiry, or redeem CDT for stablecoins after expiry. 0% interest debt with value embedded in conversion rights.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">What's SSTR's value proposition?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            Leveraged exposure to SUI with managed downside risk and no forced liquidation. Trades at premium to treasury NAV due to implied premium embedded in convertible notes. Value increases as treasury accumulates more SUI and through lending yields.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">How does cross-chain work?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            1inch Fusion+ handles seamless swaps (SUI ↔ ETH/USDC) for entry/exit without traditional bridging complexity. Limit Order Protocol enables TWAP and sophisticated trading strategies.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">Can I borrow against SSTR?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            Yes, use SSTR as collateral in the custom Sui Lending Pool where only SSTR tokens can be used as collateral. SSTR holders can borrow SUI against SSTR with liquidation thresholds while maintaining leveraged exposure.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span class="faq-label">What risks are involved?</span>
+                            <img src="assets/arrow-right.svg" class="arrow-icon faq-arrow">
+                        </summary>
+                        <div class="faq-answer">
+                            Standard DeFi risks include smart contract vulnerabilities and market volatility. However, there's no forced liquidation risk. Always DYOR and consult professionals before investing.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Community</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Discord</a>
+                        <a href="#" class="footer-link">X (Twitter)</a>
+                        <a href="#" class="footer-link">GitHub</a>
+                        <a href="#" class="footer-link">Documentation</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Protocol</h3>
+                    <div class="footer-links">
+                        <a href="app/auth/login/" class="footer-link">Enter App</a>
+                        <a href="#" class="footer-link">Read Docs</a>
+                        <a href="#faq" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Governance</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p class="footer-disclaimer">
+                        DeFi involves risks including smart contract vulnerabilities and market volatility. 
+                        This is not financial advice. Consult professionals before making investment decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('open');
+            
+            // Rotate the arrow icon
+            const arrow = mobileMenuBtn.querySelector('.arrow-icon');
+            if (navMenu.classList.contains('open')) {
+                arrow.style.transform = 'rotate(-90deg)';
+            } else {
+                arrow.style.transform = 'rotate(90deg)';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove('open');
+                const arrow = mobileMenuBtn.querySelector('.arrow-icon');
+                arrow.style.transform = 'rotate(90deg)';
+            }
+        });
+        
+        // Close menu when window is resized to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('open');
+                const arrow = mobileMenuBtn.querySelector('.arrow-icon');
+                arrow.style.transform = 'rotate(90deg)';
+            }
+        });
+    </script>
+</body>
+</html>
